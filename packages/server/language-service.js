@@ -5,8 +5,6 @@ const {
 // Creates a client
 const translate = new Translate();
 
-process.env.GOOGLE_APPLICATION_CREDENTIALS="/Users/barrop02/Downloads/listen-7c1de643318c.json"
-
 const detectLanguage = async (text) => {
     return translate
         .detect(text)
