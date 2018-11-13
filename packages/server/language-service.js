@@ -1,24 +1,26 @@
-const {
-    Translate
-} = require('@google-cloud/translate');
+const googleLanguageClient = require('./google-translate-client');
+const awsLanguageClient = require('./aws-comprenend-client');
 
-// Creates a client
-const translate = new Translate();
+const formatResponse = (response, service, text) => {
+    console.log(response);
+    switch(service) {
+        case "AWS":
+            const result = response.ResultList;
+            return result ? [{language: result[0].Languages[0].LanguageCode, confidence: result[0].Languages[0].Score, input: text }] : [];
+        default:
+            return response;
+    }
+}
 
-const detectLanguage = async (text) => {
-    return translate
-        .detect(text)
-        .then(results => {
-            let detections = results[0];
-            detections = Array.isArray(detections) ? detections : [detections];
-            detections.forEach(detection => {
-                console.log(`${detection.input} => ${detection.language}`);
-            });
-            return detections;
-        })
-        .catch(err => {
-            console.error('ERROR:', err);
-        });
+const detectLanguage = async (service, text) => {
+    switch(service) {
+        case "AWS":
+            return formatResponse(await awsLanguageClient.detectLanguage(text), service, text);
+        case "GOOGLE":
+            return googleLanguageClient.detectLanguage(text);
+        default:
+            throw new Error(`unknown service ${service}`);
+    }
 }
 
 exports.detectLanguage = detectLanguage;

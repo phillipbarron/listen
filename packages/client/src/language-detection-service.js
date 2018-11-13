@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const detectLanguage = async text => {
-    const detectedLanguage = await axios.get(`/detect/${text}`).then(res => {
+const detectLanguage = async (text, service = "GOOGLE")  => {
+    const detectedLanguage = await axios.get(`/detect/${service}/${text}`).then(res => {
         return res;
     }).catch(error => {
         throw error
