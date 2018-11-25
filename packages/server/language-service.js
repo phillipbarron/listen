@@ -2,7 +2,6 @@ const googleLanguageClient = require('./google-translate-client');
 const awsLanguageClient = require('./aws-comprenend-client');
 
 const formatResponse = (response, service, text) => {
-    console.log(response);
     switch(service) {
         case "AWS":
             const result = response.ResultList;
