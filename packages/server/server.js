@@ -8,4 +8,4 @@ app.get('/detect/:service/:text', async (request, response) => {
     response.json(detectedLanguages);
 });
 
-app.listen(8080, () => console.log('IM LISTENING'));
+app.listen(8090, () => console.log('listening on http://localhost:8090'));
