@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bbc/cps-wormhole": "^1.0.7",
     "concurrently": "^4.0.1"
   },
   "devDependencies": {
