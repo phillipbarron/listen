@@ -1,16 +1,20 @@
 {
   "name": "listen",
   "version": "1.0.0",
-  "description": "",
+  "description": "proof of concept",
   "main": "index.js",
   "scripts": {
-    "server" : "cd packages/server && nodemon server.js",
-    "client" : "cd packages/client && npm run client",
-    "start": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
+    "server": "cd packages/server && nodemon server.js",
+    "client": "cd packages/client && npm run client",
+    "start": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
+    "bootstrap": "npm install && lerna bootstrap"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.0.1"
+  },
+  "devDependencies": {
+    "lerna": "^3.4.3"
   }
 }
