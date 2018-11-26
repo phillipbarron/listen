@@ -63,6 +63,6 @@ export default class TestInput extends Component {
                     getServiceRow('AWS')
                 }
             </div>
-        )
+        );
     }
 }
