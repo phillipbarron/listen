@@ -11,12 +11,12 @@ This is a proof-of-concept which may (does) depart from engineering excellence p
 You will need lerna available
 
 ```bash
-npm i  -g lerna
+npm i -g lerna
 ```
 
 ### Google Translate API
 
-The app requires `GOOGLE_APPLICATION_CREDENTIALS` environment variable.
+The app requires `GOOGLE_APPLICATION_CREDENTIALS` set as an environment variable.
 See [here](https://cloud.google.com/translate/docs/quickstart) for setting up a google account.
 
 ### AWS Comprehend API
