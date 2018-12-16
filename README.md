@@ -4,7 +4,7 @@
 Hit to google translate / AWS Comprehend API and display results in a React component
 
 ## Disclaimer!
-This is a proof-of-concept which may (does) depart from engineering excellence principles at times. The styling choices may also prove to be at odds with common notions of aesthetic desirability.
+This is a proof-of-concept which _may_ does depart from engineering excellence principles at times. The styling choices may also prove to be at odds with common notions of aesthetic desirability.
 
 ## Prerequisites
 
