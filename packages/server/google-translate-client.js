@@ -3,6 +3,7 @@ const {
 } = require('@google-cloud/translate');
 
 // Creates a client
+// Move to a factory
 const translate = new Translate();
 
 const detectLanguage = async (text) => {
