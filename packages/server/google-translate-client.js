@@ -18,7 +18,7 @@ const detectLanguage = async (text) => {
             return detections;
         })
         .catch(err => {
-            console.error('ERROR:', err);
+            console.error('Failed during language detection request to translate API:', err);
         });
 }
 
