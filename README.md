@@ -32,7 +32,7 @@ export CERT_LOCATION="/path/to/you/dev/cert";
 ## Installation
 
 ```bash
-npm run boostrap
+npm run bootstrap
 ```
 
 ## Run application

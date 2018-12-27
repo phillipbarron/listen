@@ -1,11 +1,10 @@
 const AWS = require('aws-sdk');
 const wormholeHelper = require('@bbc/cps-wormhole');
+const awsFactory = require('./factories/aws-factory');
 
 AWS.config.update({region:'eu-west-1'});
 
-// todo - move this out to a factory
-// this will note work behind a proxy at present
-const comprehend = new AWS.Comprehend();
+const comprehend = awsFactory.getComrehendClient();
 
 const setAwsCredentials = async () => {
     if (!process.env.AWS_SECRET_ACCESS_KEY) {
