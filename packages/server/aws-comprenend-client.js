@@ -3,6 +3,8 @@ const wormholeHelper = require('@bbc/cps-wormhole');
 
 AWS.config.update({region:'eu-west-1'});
 
+// todo - move this out to a factory
+// this will note work behind a proxy at present
 const comprehend = new AWS.Comprehend();
 
 const setAwsCredentials = async () => {
