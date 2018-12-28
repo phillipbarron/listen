@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import TestInput from './test-input';
+import LanguageDetectionInput from './language-detection-input';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <TestInput />
+          <LanguageDetectionInput />
         </header>
       </div>
     );

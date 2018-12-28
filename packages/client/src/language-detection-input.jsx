@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import detectLanguage from '../src/language-detection-service';
+import detectLanguage from './language-detection-service';
 import ISO6391 from 'iso-639-1';
-export default class TestInput extends Component {
+
+export default class LanguageDetectionInput extends Component {
     constructor(props) {
         super(props);
         this.detectLanguage = this.detectLanguage.bind(this);
@@ -51,7 +52,12 @@ export default class TestInput extends Component {
                 <div className="form-group">
                     <div className="row">
                         <div className="col-md-4"></div>
-                            <input className="form-control col-md-4" placeholder="Detect language" type="text" onChange={change => this.detectLanguage(change.target.value)} />
+                            <input 
+                                className="form-control col-md-4" 
+                                placeholder="Detect language" 
+                                type="text" 
+                                onChange={change => this.detectLanguage(change.target.value)} 
+                            />
                         <div className="col-md-4"></div>
                     </div>
                 </div>
