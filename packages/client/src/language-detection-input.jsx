@@ -6,6 +6,7 @@ const languageDetectionServices = {
     AWS: 'AWS',
     GOOGLE: 'GOOGLE'
 };
+
 export default class LanguageDetectionInput extends Component {
     constructor(props) {
         super(props);
@@ -23,14 +24,14 @@ export default class LanguageDetectionInput extends Component {
                 Google : {}
             });
         }
-        const googleLanguage = await detectLanguage(string, languageDetectionServices.GOOGLE);
-        const awsLanguage = await detectLanguage(string, languageDetectionServices.AWS);
-        const googleOutput = googleLanguage ? googleLanguage.data[0] : {};
-        const awsOutput = awsLanguage ? awsLanguage.data[0] : {};
+        const googleClientResponse = await detectLanguage(string, languageDetectionServices.GOOGLE);
+        const awsLanguageResponse = await detectLanguage(string, languageDetectionServices.AWS);
+        const googleDetectedLanguage = googleClientResponse ? googleClientResponse.data[0] : {};
+        const awsDetectedLanguage = awsLanguageResponse ? awsLanguageResponse.data[0] : {};
 
         this.setState({
-            AWS: awsOutput,
-            Google: googleOutput
+            AWS: awsDetectedLanguage,
+            Google: googleDetectedLanguage
         })
     }
 
