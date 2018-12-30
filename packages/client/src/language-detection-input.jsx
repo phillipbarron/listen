@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import detectLanguage from './language-detection-service';
 import ISO6391 from 'iso-639-1';
 
+const languageDetectionServices = {
+    AWS: 'AWS',
+    GOOGLE: 'GOOGLE'
+};
 export default class LanguageDetectionInput extends Component {
     constructor(props) {
         super(props);
@@ -13,8 +17,14 @@ export default class LanguageDetectionInput extends Component {
     }
     
     async detectLanguage(string) {
-        const googleLanguage = await detectLanguage(string, 'GOOGLE');
-        const awsLanguage = await detectLanguage(string, 'AWS');
+        if(string === "") {
+            return this.setState({
+                AWS : {},
+                Google : {}
+            });
+        }
+        const googleLanguage = await detectLanguage(string, languageDetectionServices.GOOGLE);
+        const awsLanguage = await detectLanguage(string, languageDetectionServices.AWS);
         const googleOutput = googleLanguage ? googleLanguage.data[0] : {};
         const awsOutput = awsLanguage ? awsLanguage.data[0] : {};
 
