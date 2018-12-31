@@ -8,8 +8,9 @@ const formatResponse = (response, service, text) => {
     switch(service) {
         case AWS:
             const result = response.ResultList;
-            return result ? [{language: result[0].Languages[0].LanguageCode, confidence: result[0].Languages[0].Score, input: text }] : [];
+            return result ? [{language: result[0].Languages[0].LanguageCode, confidence: result[0].Languages[0].Score, input: text, service }] : [];
         default:
+            response[0].service = service;
             return response;
     }
 }
@@ -19,7 +20,7 @@ const detectLanguage = async (service, text) => {
         case AWS:
             return formatResponse(await awsLanguageClient.detectLanguage(text), service, text);
         case GOOGLE:
-            return googleLanguageClient.detectLanguage(text);
+            return formatResponse(await googleLanguageClient.detectLanguage(text), GOOGLE);
         default:
             throw new Error(`unknown service ${service}`);
     }
