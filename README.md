@@ -1,4 +1,4 @@
-# sandbox proof-of-concept for language detection
+# sandbox proof-of-concept language detection component
 
 Query Google translate / AWS Comprehend API and display results in a React component
 
