@@ -17,16 +17,20 @@ npm i -g lerna
 ### Google Translate API
 
 The app requires `GOOGLE_APPLICATION_CREDENTIALS` set as an environment variable.
+
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/google/credentials.json";
+```
 See [here](https://cloud.google.com/translate/docs/quickstart) for setting up a google account.
 
 ### AWS Comprehend API
 
-The app authenticates with the [AWS API](https://aws.amazon.com/comprehend) using temporary credentials obtained from the Wormhole. This requires that you have a dev cert location and an AWS account number exported:
+The app authenticates with the [AWS API](https://aws.amazon.com/comprehend) using temporary credentials obtained from the Wormhole. This requires that you have a dev-cert location and an AWS account number exported:
 
 ```bash
 export AWS_ACCOUNT_NUMBER="12345678910";
 
-export CERT_LOCATION="/path/to/you/dev/cert";
+export CERT_LOCATION="/path/to/your/dev/cert";
 ```
 
 ## Installation
