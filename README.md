@@ -25,7 +25,7 @@ See [here](https://cloud.google.com/translate/docs/quickstart) for setting up a 
 
 ### AWS Comprehend API
 
-The app authenticates with the [AWS API](https://aws.amazon.com/comprehend) using temporary credentials obtained from the Wormhole. This requires that you have a dev-cert location and an AWS account number exported:
+The app authenticates with the [AWS API](https://aws.amazon.com/comprehend) using credentials obtained from the Wormhole. This requires that you have a dev-cert location and an AWS account number exported:
 
 ```bash
 export AWS_ACCOUNT_NUMBER="12345678910";
